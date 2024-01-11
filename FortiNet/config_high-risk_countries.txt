@@ -1,0 +1,58 @@
+config firewall address
+
+    edit "China"
+        set type geography
+        set associated-interface "wan"
+        set color 6
+        set country "CN"
+        set comment "High-risk country"
+    next
+
+    edit "India"
+        set type geography
+        set associated-interface "wan"
+        set color 6
+        set country "IN"
+        set comment "High-risk country"
+    next
+
+    edit "North Korea"
+        set type geography
+        set associated-interface "wan"
+        set color 6
+        set country "KP"
+        set comment "High-risk country"
+    next
+
+    edit "Iran"
+        set type geography
+        set associated-interface "wan"
+        set color 6
+        set country "IR"
+        set comment "High-risk country"
+    next
+
+    edit "Russia"
+        set type geography
+        set associated-interface "wan"
+        set color 6
+        set country "RU"
+        set comment "High-risk country"
+    next
+
+    edit "Turkey"
+        set type geography
+        set associated-interface "wan"
+        set color 6
+        set country "TR"
+        set comment "High-risk country"
+    next
+end
+
+config firewall addrgrp
+    edit "High-risk countries"
+        set member "China" "India" "North Korea" "Iran" "Russia" "Turkey"
+        set comment "High-risk countries"
+        set color 6
+    next
+end
